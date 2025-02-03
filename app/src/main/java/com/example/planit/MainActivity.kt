@@ -11,6 +11,13 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+
+
+
+
+    
+    //달력 관련 코드, 건들지 말것
     private lateinit var binding: CalendarBinding // ViewBinding 변수 초기화
     private val calendar = Calendar.getInstance() // 현재 날짜와 시간 정보 초기화
     private val scheduleData: MutableMap<String, List<String>> = mutableMapOf() // 일정 데이터를 저장할 맵
@@ -162,6 +169,6 @@ class MainActivity : AppCompatActivity() {
             binding.eventContainer.removeAllViews()
         }
     }
-
+    //여기까지 달력 코드, 건들지 말것
 
 }
