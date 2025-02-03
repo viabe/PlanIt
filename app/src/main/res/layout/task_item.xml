@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#2C2C2C"
+    android:layout_marginBottom="8dp">
+
+    <!-- 할 일 텍스트와 체크박스 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/taskCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/taskText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="코딩 공부하기"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:paddingStart="8dp"/>
+    </LinearLayout>
+
+    <!-- 리뷰 입력 레이아웃 (초기에는 숨김 처리) -->
+    <LinearLayout
+        android:id="@+id/reviewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingTop="8dp">
+
+        <EditText
+            android:id="@+id/reviewInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="리뷰를 입력하세요"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/buttonSaveReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰 저장하기"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
