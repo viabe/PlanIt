@@ -3,10 +3,12 @@ package com.example.planit
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.example.planit.db.TodoRepository
 
 class AddTaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,8 @@ class AddTaskActivity : AppCompatActivity() {
         val buttonSubmit = findViewById<Button>(R.id.buttonSubmit)
         val buttonClose = findViewById<ImageButton>(R.id.buttonClose)
 
+        val todoRepo = TodoRepository(this)
+
         // 등록하기 버튼 클릭 이벤트
         buttonSubmit.setOnClickListener {
             val taskName = editTextTask.text.toString() // 입력된 할 일 가져오기
@@ -26,6 +30,8 @@ class AddTaskActivity : AppCompatActivity() {
                 val resultIntent = Intent().apply {
                     putExtra("TASK_NAME", taskName) // 입력된 할 일을 인텐트에 담기
                 }
+
+                todoRepo.insertTodo("2025-02-04", taskName)
                 setResult(Activity.RESULT_OK, resultIntent) // 결과 설정
                 finish() // 메인 화면으로 돌아가기
             }
